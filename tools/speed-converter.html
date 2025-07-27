@@ -6,9 +6,11 @@
     <meta name="description" content="Speed Converter - Convert between various units of speed like km/h, miles/h, m/s, etc.">
     <meta name="keywords" content="speed converter, unit converter, km/h, miles/h, m/s, conversion tool">
     <meta name="author" content="Aitechnocraftschatbot">
-    <title>Speed Converter - Multi-Tools Hub</title>
+    <title>Speed Converter - Multi-Converters-Tool</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Favicon Placeholder -->
@@ -18,58 +20,45 @@
     <!-- Header will be dynamically loaded here -->
     <div id="header-placeholder"></div>
 
-    <main class="container my-4">
+    <main class="container my-5">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h1 class="card-title text-center mb-4">Speed Converter</h1>
-                        
-                        <!-- Ad Section Placeholder (Top of Tool) -->
-                        <div class="ad-placeholder mb-4">
-                            <p>Advertisement Area (Tool Page Top)</p>
-                            <!-- AdSense Code or other ad network code will go here -->
-                        </div>
+                <div class="tool-card p-4">
+                    <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h1 class="h3 mb-4">Speed Converter</h1>
+                    
+                    <div class="ad-space" style="padding: 20px;">
+                        <p>Advertisement Area</p>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="inputValue" class="form-label">Enter Value:</label>
-                            <input type="number" class="form-control" id="inputValue" placeholder="0" value="0">
-                        </div>
-                        <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="inputValue" class="form-label">Enter Value:</label>
+                        <input type="number" class="form-control" id="inputValue" placeholder="0" value="0">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                             <label for="inputUnit" class="form-label">From Unit:</label>
                             <select class="form-select" id="inputUnit">
-                                <option value="meters_per_second">Meters per Second (m/s)</option>
-                                <option value="kilometers_per_hour">Kilometers per Hour (km/h)</option>
-                                <option value="miles_per_hour">Miles per Hour (mph)</option>
-                                <option value="feet_per_second">Feet per Second (ft/s)</option>
-                                <option value="knots">Knots (kn)</option>
-                                <option value="mach">Mach (at sea level)</option>
+                                <option value="meters_per_second">Meters per Second</option>
+                                <option value="kilometers_per_hour">Kilometers per Hour</option>
+                                <option value="miles_per_hour">Miles per Hour</option>
+                                <option value="feet_per_second">Feet per Second</option>
+                                <option value="knots">Knots</option>
                             </select>
                         </div>
-                        <div class="mb-3">
+                        <div class="col-md-6 mb-3">
                             <label for="outputUnit" class="form-label">To Unit:</label>
                             <select class="form-select" id="outputUnit">
-                                <option value="meters_per_second">Meters per Second (m/s)</option>
-                                <option value="kilometers_per_hour">Kilometers per Hour (km/h)</option>
-                                <option value="miles_per_hour">Miles per Hour (mph)</option>
-                                <option value="feet_per_second">Feet per Second (ft/s)</option>
-                                <option value="knots">Knots (kn)</option>
-                                <option value="mach">Mach (at sea level)</option>
+                                <option value="meters_per_second">Meters per Second</option>
+                                <option value="kilometers_per_hour">Kilometers per Hour</option>
+                                <option value="miles_per_hour">Miles per Hour</option>
+                                <option value="feet_per_second">Feet per Second</option>
+                                <option value="knots">Knots</option>
                             </select>
                         </div>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-primary" id="convertBtn">Convert</button>
-                        </div>
-                        <div class="mt-4 p-3 bg-light border rounded">
-                            <h5 class="mb-0">Result: <span id="resultValue">0</span></h5>
-                        </div>
-
-                        <!-- Ad Section Placeholder (Middle of Tool) -->
-                        <div class="ad-placeholder mt-4">
-                            <p>Advertisement Area (Tool Page Middle)</p>
-                            <!-- AdSense Code or other ad network code will go here -->
-                        </div>
-
+                    </div>
+                    <div class="mt-3 p-3 bg-light border rounded text-center">
+                        <h5 class="mb-0">Result: <span id="resultValue" class="fw-bold">0</span></h5>
                     </div>
                 </div>
             </div>
