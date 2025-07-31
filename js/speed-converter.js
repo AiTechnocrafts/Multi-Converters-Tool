@@ -6,16 +6,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultValue = document.getElementById('resultValue');
 
     const conversionRates = {
-        // Base unit: meters per second (m/s)
-        'meters_per_second': 1,
-        'kilometers_per_hour': 1 / 3.6, // 1 km/h = 1/3.6 m/s
-        'miles_per_hour': 0.44704, // 1 mph = 0.44704 m/s
-        'feet_per_second': 0.3048, // 1 ft/s = 0.3048 m/s
-        'knots': 0.514444, // 1 knot = 0.514444 m/s
-        'mach': 343 // Mach 1 at sea level (approx. 343 m/s)
+        // Base unit: kilograms
+        'kilograms': 1,
+        'grams': 0.001,
+        'milligrams': 0.000001,
+        'metric_tons': 1000,
+        'pounds': 0.453592,
+        'ounces': 0.0283495,
+        'stones': 6.35029,
+        'short_tons': 907.185,
+        'long_tons': 1016.05
     };
 
-    function convertSpeed() {
+    function convertWeight() {
         const value = parseFloat(inputValue.value);
         const fromUnit = inputUnit.value;
         const toUnit = outputUnit.value;
@@ -25,21 +28,21 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Convert input value to base unit (meters per second)
-        const valueInMetersPerSecond = value * conversionRates[fromUnit];
+        // Convert input value to base unit (kilograms)
+        const valueInKilograms = value * conversionRates[fromUnit];
 
-        // Convert from base unit (meters per second) to output unit
-        const convertedValue = valueInMetersPerSecond / conversionRates[toUnit];
+        // Convert from base unit (kilograms) to output unit
+        const convertedValue = valueInKilograms / conversionRates[toUnit];
 
         resultValue.textContent = convertedValue.toFixed(4); // Display with 4 decimal places
     }
 
     // Add event listeners
-    convertBtn.addEventListener('click', convertSpeed);
-    inputValue.addEventListener('input', convertSpeed);
-    inputUnit.addEventListener('change', convertSpeed);
-    outputUnit.addEventListener('change', convertSpeed);
+    convertBtn.addEventListener('click', convertWeight);
+    inputValue.addEventListener('input', convertWeight);
+    inputUnit.addEventListener('change', convertWeight);
+    outputUnit.addEventListener('change', convertWeight);
 
     // Initial conversion on page load
-    convertSpeed();
+    convertWeight();
 });
